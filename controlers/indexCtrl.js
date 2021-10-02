@@ -1,5 +1,8 @@
 indexFn = (req, res, next) => {
-    res.render('index', { title: 'Express' });
+    res.json({
+        "title": "Hello",
+        "body": "Hello, World"
+    });
 }
 
 module.exports = {
