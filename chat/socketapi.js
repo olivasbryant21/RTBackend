@@ -5,8 +5,10 @@ const socketapi = {
 
 //Logic
 io.on('connection', (socket) => {
-    socket.on('chat message', (msg) => {
-        io.emit('chat message', msg);
+    socket.on('chat message', (socketId, msg) => {
+        io.to(socketId).emit('chat message', {
+            from: socket.id,
+            message: msg});
     });
 });
 
