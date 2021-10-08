@@ -1,3 +1,4 @@
+const chats = require('../models/chatStorage');
 const io = require('socket.io')();
 const socketapi = {
     io: io,
